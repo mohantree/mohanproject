@@ -49,4 +49,7 @@ Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])
 Route::get('/my-orders', [OrderController::class, 'index'])
     ->name('orders.index');
 
-    
+    // ALB Health Check
+Route::get('/health', function () {
+    return response('OK', 200);
+});
